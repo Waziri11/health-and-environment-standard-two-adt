@@ -1,0 +1,949 @@
+{
+  "activity": {
+    "word": "activity",
+    "definition": "A task or exercise done to help learning.",
+    "variations": [
+      "activity",
+      "activities"
+    ],
+    "emoji": "✍️🎒"
+  },
+  "adhere": {
+    "word": "adhere",
+    "definition": "to follow rules or instructions carefully.",
+    "variations": [
+      "adhere",
+      "adheres",
+      "adhered",
+      "adhering"
+    ],
+    "emoji": "✅📏"
+  },
+  "adherence": {
+    "word": "adherence",
+    "definition": "following rules or instructions carefully.",
+    "variations": [
+      "adhere",
+      "adheres",
+      "adhered",
+      "adhering",
+      "adherence"
+    ],
+    "emoji": "✅📏"
+  },
+  "animal": {
+    "word": "animal",
+    "definition": "A living thing that can move and needs food and water to live.",
+    "variations": [
+      "animal",
+      "animals"
+    ],
+    "emoji": "🐘🐄"
+  },
+  "antelopes": {
+    "word": "antelopes",
+    "definition": "wild animals that look like deer and can run very fast.",
+    "variations": [
+      "antelope",
+      "antelopes"
+    ],
+    "emoji": "🦌"
+  },
+  "attractive": {
+    "word": "attractive",
+    "definition": "Nice to look at; beautiful.",
+    "variations": [
+      "attractive"
+    ],
+    "emoji": "🌸✨"
+  },
+  "beautify": {
+    "word": "beautify",
+    "definition": "To make a place look more beautiful.",
+    "variations": [
+      "beautify",
+      "beautifies",
+      "beautified",
+      "beautifying"
+    ],
+    "emoji": "🌸✨"
+  },
+  "benefit": {
+    "word": "benefit",
+    "definition": "A good result or advantage that something gives.",
+    "variations": [
+      "benefit",
+      "benefits"
+    ],
+    "emoji": "👍✨"
+  },
+  "breed": {
+    "word": "breed",
+    "definition": "To produce young ones; for insects, to grow and multiply in a place.",
+    "variations": [
+      "breed",
+      "breeds",
+      "breeding"
+    ],
+    "emoji": "🦟💧"
+  },
+  "bruises": {
+    "word": "bruises",
+    "definition": "marks on the skin caused by being hit or hurt.",
+    "variations": [
+      "bruise",
+      "bruises"
+    ],
+    "emoji": "🩹🤕"
+  },
+  "bucket": {
+    "word": "bucket",
+    "definition": "a container used for carrying water or other things.",
+    "variations": [
+      "bucket",
+      "buckets"
+    ],
+    "emoji": "🪣💧"
+  },
+  "buffaloes": {
+    "word": "buffaloes",
+    "definition": "large, strong wild animals with big curved horns.",
+    "variations": [
+      "buffalo",
+      "buffaloes"
+    ],
+    "emoji": "🐃"
+  },
+  "bus stop": {
+    "word": "bus stop",
+    "definition": "a place where people wait to get on or off a bus.",
+    "variations": [
+      "bus stop",
+      "bus stops"
+    ],
+    "emoji": "🚌🚏"
+  },
+  "cattle": {
+    "word": "cattle",
+    "definition": "farm animals such as cows that are kept for milk, meat, or work.",
+    "variations": [
+      "cattle"
+    ],
+    "emoji": "🐄"
+  },
+  "caution": {
+    "word": "caution",
+    "definition": "care taken to avoid danger or mistakes.",
+    "variations": [
+      "caution",
+      "cautious"
+    ],
+    "emoji": "⚠️👀"
+  },
+  "centipede": {
+    "word": "centipede",
+    "definition": "A long animal with many legs.",
+    "variations": [
+      "centipede",
+      "centipedes"
+    ],
+    "emoji": "🐛"
+  },
+  "children’s crossing": {
+    "word": "children’s crossing",
+    "definition": "a marked place or sign showing where children should cross the road safely.",
+    "variations": [
+      "children’s crossing",
+      "children crossings"
+    ],
+    "emoji": "🚸👧👦"
+  },
+  "clean": {
+    "word": "clean",
+    "definition": "Free from dirt and germs.",
+    "variations": [
+      "clean",
+      "cleans",
+      "cleaning",
+      "cleaned"
+    ],
+    "emoji": "🧼✨"
+  },
+  "competency": {
+    "word": "competency",
+    "definition": "The ability to do something well and correctly.",
+    "variations": [
+      "competency",
+      "competencies"
+    ],
+    "emoji": "✅💡"
+  },
+  "compound": {
+    "word": "compound",
+    "definition": "An open area around a building, such as a school yard.",
+    "variations": [
+      "compound",
+      "compounds"
+    ],
+    "emoji": "🏫🌳"
+  },
+  "conserve": {
+    "word": "conserve",
+    "definition": "To protect and care for something so it stays safe and useful.",
+    "variations": [
+      "conserve",
+      "conserves",
+      "conserved",
+      "conserving",
+      "conservation"
+    ],
+    "emoji": "🌍🌱"
+  },
+  "curriculum": {
+    "word": "curriculum",
+    "definition": "The subjects and lessons planned for learners in school.",
+    "variations": [
+      "curriculum",
+      "curricula"
+    ],
+    "emoji": "📘🏫"
+  },
+  "cyclist lane": {
+    "word": "cyclist lane",
+    "definition": "a part of the road set aside for people riding bicycles.",
+    "variations": [
+      "cyclist lane",
+      "cyclist lanes"
+    ],
+    "emoji": "🚲🛣️"
+  },
+  "danger": {
+    "word": "danger",
+    "definition": "something that can cause harm or injury.",
+    "variations": [
+      "danger",
+      "dangers",
+      "dangerous"
+    ],
+    "emoji": "⚠️🔥"
+  },
+  "dangerous": {
+    "word": "dangerous",
+    "definition": "Able to cause harm or injury.",
+    "variations": [
+      "dangerous"
+    ],
+    "emoji": "⚠️🚫"
+  },
+  "disease": {
+    "word": "disease",
+    "definition": "An illness that makes the body unhealthy.",
+    "variations": [
+      "disease",
+      "diseases"
+    ],
+    "emoji": "🤒🦠"
+  },
+  "dispose": {
+    "word": "dispose",
+    "definition": "to throw something away in a proper and safe way.",
+    "variations": [
+      "dispose",
+      "disposes",
+      "disposed",
+      "disposing",
+      "disposal"
+    ],
+    "emoji": "🗑️♻️"
+  },
+  "domestic animals": {
+    "word": "domestic animals",
+    "definition": "animals that are kept by people at home or on the farm.",
+    "variations": [
+      "domestic animal",
+      "domestic animals"
+    ],
+    "emoji": "🏠🐄"
+  },
+  "donkeys": {
+    "word": "donkeys",
+    "definition": "strong animals used for carrying loads or pulling things.",
+    "variations": [
+      "donkey",
+      "donkeys"
+    ],
+    "emoji": "🫏"
+  },
+  "dustbin": {
+    "word": "dustbin",
+    "definition": "a container used for storing waste before it is thrown away.",
+    "variations": [
+      "dustbin",
+      "dustbins"
+    ],
+    "emoji": "🗑️📦"
+  },
+  "dustpan": {
+    "word": "dustpan",
+    "definition": "a tool used for collecting dust and small pieces of waste from the floor.",
+    "variations": [
+      "dustpan",
+      "dustpans"
+    ],
+    "emoji": "🧹🪣"
+  },
+  "environment": {
+    "word": "environment",
+    "definition": "Everything around us, including living things, non-living things, land, water, and air.",
+    "variations": [
+      "environment",
+      "environments"
+    ],
+    "emoji": "🌍🌳"
+  },
+  "feature": {
+    "word": "feature",
+    "definition": "An important part or quality of something that helps describe it.",
+    "variations": [
+      "feature",
+      "features"
+    ],
+    "emoji": "⭐👁️"
+  },
+  "flammable": {
+    "word": "flammable",
+    "definition": "able to catch fire easily.",
+    "variations": [
+      "flammable"
+    ],
+    "emoji": "🔥🧯"
+  },
+  "flower": {
+    "word": "flower",
+    "definition": "The colorful part of a plant that grows on a stem.",
+    "variations": [
+      "flower",
+      "flowers"
+    ],
+    "emoji": "🌸🌼"
+  },
+  "forest": {
+    "word": "forest",
+    "definition": "a large area covered with many trees where many wild animals live.",
+    "variations": [
+      "forest",
+      "forests"
+    ],
+    "emoji": "🌳🌲"
+  },
+  "fresh air": {
+    "word": "fresh air",
+    "definition": "Clean air that is good to breathe.",
+    "variations": [
+      "fresh air"
+    ],
+    "emoji": "🌬️🍃"
+  },
+  "garden shears": {
+    "word": "garden shears",
+    "definition": "a tool used for cutting and trimming plants or flowers.",
+    "variations": [
+      "garden shear",
+      "garden shears"
+    ],
+    "emoji": "✂️🌸"
+  },
+  "germ": {
+    "word": "germ",
+    "definition": "a very small living thing that can cause disease.",
+    "variations": [
+      "germ",
+      "germs"
+    ],
+    "emoji": "🦠🧼"
+  },
+  "goats": {
+    "word": "goats",
+    "definition": "farm animals with horns that are kept for milk, meat, or skin.",
+    "variations": [
+      "goat",
+      "goats"
+    ],
+    "emoji": "🐐"
+  },
+  "group": {
+    "word": "group",
+    "definition": "A set of things or living things that belong together in the same kind.",
+    "variations": [
+      "group",
+      "groups"
+    ],
+    "emoji": "🧩👥"
+  },
+  "habitat": {
+    "word": "habitat",
+    "definition": "The natural home or place where a plant or animal lives.",
+    "variations": [
+      "habitat",
+      "habitats"
+    ],
+    "emoji": "🏞️🐾"
+  },
+  "health": {
+    "word": "health",
+    "definition": "The state of a person’s body and mind being well and free from illness.",
+    "variations": [
+      "health",
+      "healthy"
+    ],
+    "emoji": "💪😊"
+  },
+  "health center": {
+    "word": "health center",
+    "definition": "A place where sick people go to get treatment and help from health workers.",
+    "variations": [
+      "health center",
+      "health centers"
+    ],
+    "emoji": "🏥💙"
+  },
+  "high voltage": {
+    "word": "high voltage",
+    "definition": "a strong amount of electricity that can be very dangerous.",
+    "variations": [
+      "high voltage"
+    ],
+    "emoji": "⚡🚫"
+  },
+  "hippopotamuses": {
+    "word": "hippopotamuses",
+    "definition": "very large wild animals that spend much time in water.",
+    "variations": [
+      "hippopotamus",
+      "hippopotamuses",
+      "hippos"
+    ],
+    "emoji": "🦛"
+  },
+  "hoe": {
+    "word": "hoe",
+    "definition": "a tool used for digging soil and removing weeds.",
+    "variations": [
+      "hoe",
+      "hoes"
+    ],
+    "emoji": "🪴⛏️"
+  },
+  "ICT tools": {
+    "word": "ICT tools",
+    "definition": "Devices and technologies used to get, watch, share, or learn information, such as computers, phones, or tablets.",
+    "variations": [
+      "ICT tool",
+      "ICT tools"
+    ],
+    "emoji": "💻📱"
+  },
+  "investigation": {
+    "word": "investigation",
+    "definition": "A careful way of finding out more about something by looking, asking, or testing.",
+    "variations": [
+      "investigation",
+      "investigations",
+      "investigate",
+      "investigating"
+    ],
+    "emoji": "🔎🧪"
+  },
+  "living things": {
+    "word": "living things",
+    "definition": "Things that are alive, such as people, animals, and plants.",
+    "variations": [
+      "living thing",
+      "living things"
+    ],
+    "emoji": "🐄🌱"
+  },
+  "machete": {
+    "word": "machete",
+    "definition": "a large sharp knife used for cutting grass, bushes, or small branches.",
+    "variations": [
+      "machete",
+      "machetes"
+    ],
+    "emoji": "🔪🌿"
+  },
+  "malaria": {
+    "word": "malaria",
+    "definition": "A disease spread by mosquitoes that can cause fever and make a person very sick.",
+    "variations": [
+      "malaria"
+    ],
+    "emoji": "🦟🤒"
+  },
+  "monitor lizard": {
+    "word": "monitor lizard",
+    "definition": "A large reptile with a long body and tail.",
+    "variations": [
+      "monitor lizard",
+      "monitor lizards"
+    ],
+    "emoji": "🦎"
+  },
+  "mosquito": {
+    "word": "mosquito",
+    "definition": "A small flying insect that bites people and can spread diseases like malaria.",
+    "variations": [
+      "mosquito",
+      "mosquitoes"
+    ],
+    "emoji": "🦟"
+  },
+  "narrow bridge": {
+    "word": "narrow bridge",
+    "definition": "a bridge with little space, where users must pass carefully.",
+    "variations": [
+      "narrow bridge",
+      "narrow bridges"
+    ],
+    "emoji": "🌉⚠️"
+  },
+  "non-living things": {
+    "word": "non-living things",
+    "definition": "Things that are not alive, such as stones, desks, and cars.",
+    "variations": [
+      "non-living thing",
+      "non-living things"
+    ],
+    "emoji": "🪨🚗"
+  },
+  "objective": {
+    "word": "objective",
+    "definition": "A goal or something you want to achieve.",
+    "variations": [
+      "objective",
+      "objectives"
+    ],
+    "emoji": "🎯🏁"
+  },
+  "observe": {
+    "word": "observe",
+    "definition": "To look at something carefully so you can learn about it.",
+    "variations": [
+      "observe",
+      "observes",
+      "observed",
+      "observing",
+      "observation",
+      "observations"
+    ],
+    "emoji": "👀🔍"
+  },
+  "observed": {
+    "word": "observed",
+    "definition": "seen carefully or noticed.",
+    "variations": [
+      "observe",
+      "observes",
+      "observed",
+      "observing",
+      "observation"
+    ],
+    "emoji": "👀🔍"
+  },
+  "ostriches": {
+    "word": "ostriches",
+    "definition": "very large birds that cannot fly but can run fast.",
+    "variations": [
+      "ostrich",
+      "ostriches"
+    ],
+    "emoji": "🐦🏃"
+  },
+  "parasite": {
+    "word": "parasite",
+    "definition": "A very small living thing that lives in or on another living thing and can cause disease.",
+    "variations": [
+      "parasite",
+      "parasites"
+    ],
+    "emoji": "🦠🔬"
+  },
+  "pedestrian crossing": {
+    "word": "pedestrian crossing",
+    "definition": "a special place where people can cross the road safely.",
+    "variations": [
+      "pedestrian crossing",
+      "pedestrian crossings"
+    ],
+    "emoji": "🚶🛣️"
+  },
+  "pit": {
+    "word": "pit",
+    "definition": "a hole in the ground.",
+    "variations": [
+      "pit",
+      "pits"
+    ],
+    "emoji": "🕳️🌍"
+  },
+  "plant": {
+    "word": "plant",
+    "definition": "A living thing that grows in soil or water, such as grass, flowers, and trees.",
+    "variations": [
+      "plant",
+      "plants"
+    ],
+    "emoji": "🌱🌿"
+  },
+  "precaution": {
+    "word": "precaution",
+    "definition": "something done in advance to avoid danger or harm.",
+    "variations": [
+      "precaution",
+      "precautions"
+    ],
+    "emoji": "🛡️⚠️"
+  },
+  "precautions": {
+    "word": "precautions",
+    "definition": "things you do in advance to stay safe and avoid danger.",
+    "variations": [
+      "precaution",
+      "precautions"
+    ],
+    "emoji": "🛡️⚠️"
+  },
+  "prevent": {
+    "word": "prevent",
+    "definition": "To stop something bad from happening.",
+    "variations": [
+      "prevent",
+      "prevents",
+      "prevented",
+      "preventing",
+      "prevention"
+    ],
+    "emoji": "🛡️✅"
+  },
+  "priority": {
+    "word": "priority",
+    "definition": "something that is more important than other things.",
+    "variations": [
+      "priority",
+      "priorities"
+    ],
+    "emoji": "⭐✅"
+  },
+  "protect": {
+    "word": "protect",
+    "definition": "To keep someone or something safe from harm.",
+    "variations": [
+      "protect",
+      "protects",
+      "protected",
+      "protecting",
+      "protection"
+    ],
+    "emoji": "🛡️💚"
+  },
+  "railway crossing": {
+    "word": "railway crossing",
+    "definition": "a place where a road crosses a railway line.",
+    "variations": [
+      "railway crossing",
+      "railway crossings"
+    ],
+    "emoji": "🚆⚠️"
+  },
+  "rake": {
+    "word": "rake",
+    "definition": "a tool used for collecting rubbish, leaves, or grass together.",
+    "variations": [
+      "rake",
+      "rakes"
+    ],
+    "emoji": "🍂🧹"
+  },
+  "resource": {
+    "word": "resource",
+    "definition": "Something useful that helps people learn or do work.",
+    "variations": [
+      "resource",
+      "resources"
+    ],
+    "emoji": "📚🛠️"
+  },
+  "restrict": {
+    "word": "restrict",
+    "definition": "to limit or stop someone from doing something.",
+    "variations": [
+      "restrict",
+      "restricts",
+      "restricted",
+      "restricting",
+      "restriction",
+      "restrictions"
+    ],
+    "emoji": "🚫⛔"
+  },
+  "road safety signs": {
+    "word": "road safety signs",
+    "definition": "signs used on or near roads to guide people and prevent accidents.",
+    "variations": [
+      "road safety sign",
+      "road safety signs"
+    ],
+    "emoji": "🚦🛣️"
+  },
+  "road users": {
+    "word": "road users",
+    "definition": "all people who use the road, such as walkers, cyclists, drivers, and passengers.",
+    "variations": [
+      "road user",
+      "road users"
+    ],
+    "emoji": "🚶🚲🚗"
+  },
+  "road work ahead": {
+    "word": "road work ahead",
+    "definition": "a warning sign that shows road construction or repair is ahead.",
+    "variations": [
+      "road work ahead"
+    ],
+    "emoji": "🚧⚠️"
+  },
+  "role-play": {
+    "word": "role-play",
+    "definition": "an activity in which learners act out a situation to practice or learn.",
+    "variations": [
+      "role-play",
+      "role-plays",
+      "role play"
+    ],
+    "emoji": "🎭🗣️"
+  },
+  "safety sign": {
+    "word": "safety sign",
+    "definition": "a sign that gives information or warnings to help people stay safe.",
+    "variations": [
+      "safety sign",
+      "safety signs"
+    ],
+    "emoji": "⚠️🪧"
+  },
+  "safety signs": {
+    "word": "safety signs",
+    "definition": "Signs that give warnings or instructions to help people stay safe.",
+    "variations": [
+      "safety sign",
+      "safety signs"
+    ],
+    "emoji": "⚠️🛑"
+  },
+  "scorpion": {
+    "word": "scorpion",
+    "definition": "A small animal with claws and a sting in its tail.",
+    "variations": [
+      "scorpion",
+      "scorpions"
+    ],
+    "emoji": "🦂"
+  },
+  "scrub": {
+    "word": "scrub",
+    "definition": "to clean something by rubbing it hard with a brush or cloth.",
+    "variations": [
+      "scrub",
+      "scrubs",
+      "scrubbed",
+      "scrubbing"
+    ],
+    "emoji": "🧽🧼"
+  },
+  "sheep": {
+    "word": "sheep",
+    "definition": "farm animals with woolly hair that are kept for wool, milk, or meat.",
+    "variations": [
+      "sheep"
+    ],
+    "emoji": "🐑"
+  },
+  "slasher": {
+    "word": "slasher",
+    "definition": "a tool used for cutting long grass or weeds.",
+    "variations": [
+      "slasher",
+      "slashers"
+    ],
+    "emoji": "🌾🛠️"
+  },
+  "slippery": {
+    "word": "slippery",
+    "definition": "smooth or wet in a way that makes it easy to fall.",
+    "variations": [
+      "slippery"
+    ],
+    "emoji": "💧⚠️"
+  },
+  "soap": {
+    "word": "soap",
+    "definition": "a cleaning substance used to remove dirt and kill germs.",
+    "variations": [
+      "soap",
+      "soaps"
+    ],
+    "emoji": "🧼🫧"
+  },
+  "stagnant water": {
+    "word": "stagnant water",
+    "definition": "Water that does not move and stays in one place for a long time.",
+    "variations": [
+      "stagnant water"
+    ],
+    "emoji": "💧🪣"
+  },
+  "struck": {
+    "word": "struck",
+    "definition": "hit by something suddenly.",
+    "variations": [
+      "strike",
+      "strikes",
+      "struck",
+      "striking"
+    ],
+    "emoji": "💥🏍️"
+  },
+  "surroundings": {
+    "word": "surroundings",
+    "definition": "the area and things around a person or place.",
+    "variations": [
+      "surrounding",
+      "surroundings"
+    ],
+    "emoji": "🏡🌳"
+  },
+  "syllabus": {
+    "word": "syllabus",
+    "definition": "A list or plan of what will be taught in a subject.",
+    "variations": [
+      "syllabus",
+      "syllabuses",
+      "syllabi"
+    ],
+    "emoji": "📝📖"
+  },
+  "toilet": {
+    "word": "toilet",
+    "definition": "A place used for passing waste from the body.",
+    "variations": [
+      "toilet",
+      "toilets"
+    ],
+    "emoji": "🚽"
+  },
+  "toxic": {
+    "word": "toxic",
+    "definition": "poisonous and harmful to living things.",
+    "variations": [
+      "toxic",
+      "toxicity"
+    ],
+    "emoji": "☠️⚠️"
+  },
+  "traffic light": {
+    "word": "traffic light",
+    "definition": "a set of colored lights that tells road users when to stop or go.",
+    "variations": [
+      "traffic light",
+      "traffic lights"
+    ],
+    "emoji": "🚦"
+  },
+  "transmit": {
+    "word": "transmit",
+    "definition": "To pass something, such as a disease, from one person or animal to another.",
+    "variations": [
+      "transmit",
+      "transmits",
+      "transmitted",
+      "transmitting",
+      "transmission"
+    ],
+    "emoji": "🦟➡️"
+  },
+  "treatment": {
+    "word": "treatment",
+    "definition": "Care given to a sick person to help them get well.",
+    "variations": [
+      "treatment",
+      "treatments"
+    ],
+    "emoji": "💊🏥"
+  },
+  "tree": {
+    "word": "tree",
+    "definition": "A tall plant with a trunk, branches, and leaves.",
+    "variations": [
+      "tree",
+      "trees"
+    ],
+    "emoji": "🌳"
+  },
+  "twig broom": {
+    "word": "twig broom",
+    "definition": "a broom made from small sticks, used for sweeping.",
+    "variations": [
+      "twig broom",
+      "twig brooms"
+    ],
+    "emoji": "🧹🌿"
+  },
+  "unsafe water": {
+    "word": "unsafe water",
+    "definition": "water that is not safe to drink or use because it may cause illness.",
+    "variations": [
+      "unsafe water"
+    ],
+    "emoji": "🚱💧"
+  },
+  "warn": {
+    "word": "warn",
+    "definition": "to tell someone about danger so they can be careful.",
+    "variations": [
+      "warn",
+      "warns",
+      "warned",
+      "warning",
+      "warnings"
+    ],
+    "emoji": "⚠️📢"
+  },
+  "waste": {
+    "word": "waste",
+    "definition": "things that are no longer useful and should be thrown away.",
+    "variations": [
+      "waste",
+      "wastes",
+      "wasteful"
+    ],
+    "emoji": "🗑️♻️"
+  },
+  "watering can": {
+    "word": "watering can",
+    "definition": "a container with a handle and spout used for watering plants.",
+    "variations": [
+      "watering can",
+      "watering cans"
+    ],
+    "emoji": "🪴💧"
+  },
+  "wild animals": {
+    "word": "wild animals",
+    "definition": "animals that live on their own in nature and are not kept at home.",
+    "variations": [
+      "wild animal",
+      "wild animals"
+    ],
+    "emoji": "🌿🦁"
+  }
+}
