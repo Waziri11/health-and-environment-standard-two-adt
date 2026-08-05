@@ -14,7 +14,10 @@ const requested = process.argv.slice(2);
 const ids = requested.length
   ? requested
   : Object.entries(audios)
-      .filter(([, file]) => !fs.existsSync(path.join(audioDir, file)))
+      .filter(([, file]) => {
+        const target = path.join(audioDir, file);
+        return !fs.existsSync(target) || fs.statSync(target).size < 1000;
+      })
       .map(([id]) => id);
 
 if (!fs.existsSync(ffmpeg)) {
@@ -33,7 +36,7 @@ try {
 
     const aiff = path.join(tempDir, `${id}.aiff`);
     const output = path.join(audioDir, filename);
-    const say = spawnSync('/usr/bin/say', ['-v', 'Daniel', '-r', '155', '-o', aiff, text], {
+    const say = spawnSync('/usr/bin/say', ['-v', 'Samantha', '-r', '155', '-o', aiff, text], {
       encoding: 'utf8',
     });
     if (say.status !== 0) throw new Error(`say failed for ${id}: ${say.stderr}`);
@@ -43,7 +46,11 @@ try {
       '-ar', '24000', '-ac', '1', '-b:a', '128k', output,
     ], { encoding: 'utf8' });
     if (encode.status !== 0) throw new Error(`ffmpeg failed for ${id}: ${encode.stderr}`);
-    if (fs.statSync(output).size < 100) throw new Error(`Generated audio is empty for ${id}`);
+    if (fs.statSync(output).size < 1000) throw new Error(`Generated audio is empty for ${id}`);
+    const decode = spawnSync(ffmpeg, [
+      '-loglevel', 'error', '-i', output, '-f', 'null', '-',
+    ], { encoding: 'utf8' });
+    if (decode.status !== 0) throw new Error(`Generated audio is invalid for ${id}: ${decode.stderr}`);
     generated += 1;
     console.log(`${id} -> ${filename}`);
   }

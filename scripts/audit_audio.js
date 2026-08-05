@@ -34,7 +34,7 @@ const report = {
   emptyFile: Object.entries(audios)
     .filter(([, file]) => {
       const target = path.join(audioDir, file);
-      return fs.existsSync(target) && fs.statSync(target).size < 100;
+      return fs.existsSync(target) && fs.statSync(target).size < 1000;
     })
     .map(([id]) => id),
   unmappedHtml: [...htmlIds].filter(
