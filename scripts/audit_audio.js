@@ -9,16 +9,32 @@ const audios = JSON.parse(fs.readFileSync(path.join(i18n, 'audios.json'), 'utf8'
 const htmlFiles = fs.readdirSync(root).filter((file) => file.endsWith('.html'));
 const htmlIds = new Set();
 const imageIds = new Set();
-const imagesWithoutId = [];
+const imageRecords = [];
+const unclassifiedImages = [];
+const legacyImageDataIds = [];
+const narrationCounts = new Map();
 
 for (const file of htmlFiles) {
   const html = fs.readFileSync(path.join(root, file), 'utf8');
   for (const match of html.matchAll(/data-id=["']([^"']+)["']/g)) htmlIds.add(match[1]);
   for (const match of html.matchAll(/data-explanation-id=["']([^"']+)["']/g)) htmlIds.add(match[1]);
+  for (const match of html.matchAll(/<[^>]*data-image-narration=["']true["'][^>]*data-id=["']([^"']+)["'][^>]*>|<[^>]*data-id=["']([^"']+)["'][^>]*data-image-narration=["']true["'][^>]*>/g)) {
+    const id = match[1] || match[2];
+    narrationCounts.set(id, (narrationCounts.get(id) || 0) + 1);
+  }
   for (const match of html.matchAll(/<img\b[^>]*>/g)) {
-    const idMatch = match[0].match(/data-id=["']([^"']+)["']/);
-    if (idMatch) imageIds.add(idMatch[1]);
-    else imagesWithoutId.push(`${file}: ${match[0].slice(0, 160)}`);
+    const tag = match[0];
+    const legacyId = tag.match(/data-id=["']([^"']+)["']/)?.[1];
+    const audioId = tag.match(/data-audio-id=["']([^"']+)["']/)?.[1];
+    const alt = tag.match(/alt=["']([^"']*)["']/)?.[1] ?? null;
+    const decorative = /role=["']presentation["']/.test(tag) && /aria-hidden=["']true["']/.test(tag);
+    if (legacyId) legacyImageDataIds.push(`${file}: ${legacyId}`);
+    if (audioId) {
+      imageIds.add(audioId);
+      imageRecords.push({ file, id: audioId, alt });
+    } else if (!decorative) {
+      unclassifiedImages.push(`${file}: ${tag.slice(0, 160)}`);
+    }
   }
 }
 
@@ -41,19 +57,30 @@ const report = {
     (id) => id in texts && String(texts[id]).trim() && !(id in audios)
   ),
   orphanMap: Object.keys(audios).filter((id) => !(id in texts)),
-  imagesWithoutId,
+  legacyImageDataIds,
+  unclassifiedImages,
   imageMissingText: [...imageIds].filter(
     (id) => !(id in texts) || !String(texts[id]).trim()
   ),
   imageMissingMap: [...imageIds].filter(
     (id) => id in texts && String(texts[id]).trim() && !(id in audios)
   ),
+  imageMissingNarration: [...imageIds].filter((id) => narrationCounts.get(id) !== 1),
+  imageAltMismatch: imageRecords
+    .filter(({ id, alt }) => alt !== texts[id])
+    .map(({ file, id, alt }) => `${file}: ${id} alt=${JSON.stringify(alt)}`),
+  weakImageDescription: [...imageIds]
+    .filter((id) => {
+      const value = String(texts[id] || '').trim();
+      return /^(?:\(?[a-z0-9]+\)?[.)]?|image|picture|photo|illustration|sign)$/i.test(value);
+    }),
 };
 
 console.log(JSON.stringify({
   htmlFiles: htmlFiles.length,
   htmlIds: htmlIds.size,
   imageIds: imageIds.size,
+  imageNarrations: narrationCounts.size,
   texts: Object.keys(texts).length,
   nonemptyTexts: nonemptyTexts.length,
   audioMappings: Object.keys(audios).length,
