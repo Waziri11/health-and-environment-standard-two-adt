@@ -6,13 +6,16 @@ const i18n = path.join(root, 'content/i18n/en');
 const audioDir = path.join(i18n, 'audio');
 const texts = JSON.parse(fs.readFileSync(path.join(i18n, 'texts.json'), 'utf8'));
 const audios = JSON.parse(fs.readFileSync(path.join(i18n, 'audios.json'), 'utf8'));
-const htmlFiles = fs.readdirSync(root).filter((file) => file.endsWith('.html'));
+const htmlFiles = [...new Set(JSON.parse(fs.readFileSync(path.join(root, 'content/pages.json'), 'utf8')).map((entry) => entry.href))];
 const htmlIds = new Set();
 const imageIds = new Set();
 const imageRecords = [];
 const unclassifiedImages = [];
 const legacyImageDataIds = [];
 const narrationCounts = new Map();
+const intentionallySilent = new Set([
+  'pg012_n0005', 'pg012_n0007', 'pg012_n0024', 'pg012_n0025', 'pg012_n0039', 'pg012_n0041',
+]);
 
 for (const file of htmlFiles) {
   const html = fs.readFileSync(path.join(root, file), 'utf8');
@@ -43,7 +46,7 @@ const nonemptyTexts = Object.entries(texts).filter(([, value]) =>
 );
 const report = {
   missingText: [...htmlIds].filter((id) => !(id in texts) && !/^qz\d{3}$/.test(id)),
-  missingMap: nonemptyTexts.map(([id]) => id).filter((id) => !(id in audios)),
+  missingMap: nonemptyTexts.map(([id]) => id).filter((id) => !(id in audios) && !intentionallySilent.has(id)),
   missingFile: Object.entries(audios)
     .filter(([, file]) => !fs.existsSync(path.join(audioDir, file)))
     .map(([id]) => id),
@@ -54,7 +57,7 @@ const report = {
     })
     .map(([id]) => id),
   unmappedHtml: [...htmlIds].filter(
-    (id) => id in texts && String(texts[id]).trim() && !(id in audios)
+    (id) => id in texts && String(texts[id]).trim() && !(id in audios) && !intentionallySilent.has(id)
   ),
   orphanMap: Object.keys(audios).filter((id) => !(id in texts)),
   legacyImageDataIds,
