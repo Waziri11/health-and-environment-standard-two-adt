@@ -16,6 +16,19 @@ const narrationCounts = new Map();
 const intentionallySilent = new Set([
   'pg012_n0005', 'pg012_n0007', 'pg012_n0024', 'pg012_n0025', 'pg012_n0039', 'pg012_n0041',
 ]);
+const catNarration = 'There is an orange coloured cat sitting and looking forward directing attention as it introduces the next learning activity';
+const catOccurrences = [
+  ['pg007_sec001.html', 'images/pg009_im002.jpg', 'pg007_im002'],
+  ['pg009_sec001.html', 'images/pg009_im002.jpg', 'pg009_im002'],
+  ['pg009_sec002.html', 'images/pg009_im002.jpg', 'pg009_im002'],
+  ['pg013_sec001.html', 'images/pg013_im002.jpg', 'pg013_im002'],
+  ['pg016_sec001.html', 'images/pg016_im002.jpg', 'pg016_im002'],
+  ['pg022_sec001.html', 'images/pg022_im002.jpg', 'pg022_im002'],
+  ['pg026_sec001.html', 'images/pg026_im002.jpg', 'pg026_im002'],
+  ['pg033_sec001.html', 'images/pg033_im002.jpg', 'pg033_im002'],
+  ['pg033_sec002.html', 'images/pg033_im002.jpg', 'pg033_im002'],
+  ['pg037_sec001.html', 'images/pg037_im002.jpg', 'pg037_im002'],
+];
 
 for (const file of htmlFiles) {
   const html = fs.readFileSync(path.join(root, file), 'utf8');
@@ -44,6 +57,27 @@ for (const file of htmlFiles) {
 const nonemptyTexts = Object.entries(texts).filter(([, value]) =>
   typeof value === 'string' && value.trim()
 );
+const catNarrationMismatch = catOccurrences.flatMap(([file, src, id]) => {
+  const html = fs.readFileSync(path.join(root, file), 'utf8');
+  const imageTag = [...html.matchAll(/<img\b[^>]*>/g)]
+    .map((match) => match[0])
+    .find((tag) => tag.includes(`src="${src}"`) || tag.includes(`src='${src}'`));
+  const narrationTags = [...html.matchAll(/<[^>]*data-image-narration=["']true["'][^>]*data-id=["']([^"']+)["'][^>]*>([^<]*)<\/[^>]+>|<[^>]*data-id=["']([^"']+)["'][^>]*data-image-narration=["']true["'][^>]*>([^<]*)<\/[^>]+>/g)];
+  const narrationText = narrationTags
+    .filter((match) => (match[1] || match[3]) === id)
+    .map((match) => (match[2] || match[4] || '').trim());
+  const problems = [];
+  if (!imageTag) problems.push('missing cat image');
+  if (imageTag && !imageTag.includes(`data-audio-id="${id}"`)) problems.push(`missing data-audio-id ${id}`);
+  if (imageTag && !imageTag.includes(`alt="${catNarration}"`)) problems.push('alt text differs');
+  if (imageTag && (/role=["']presentation["']/.test(imageTag) || /aria-hidden=["']true["']/.test(imageTag))) problems.push('cat is decorative');
+  if (narrationText.length !== 1 || narrationText[0] !== catNarration) problems.push('narration element differs or is missing');
+  if (texts[id] !== catNarration) problems.push('texts.json differs');
+  if (audios[id] !== `${id}.mp3`) problems.push('audio mapping differs');
+  const audioFile = path.join(audioDir, `${id}.mp3`);
+  if (!fs.existsSync(audioFile) || fs.statSync(audioFile).size < 1000) problems.push('audio file is missing or empty');
+  return problems.map((problem) => `${file}: ${problem}`);
+});
 const report = {
   missingText: [...htmlIds].filter((id) => !(id in texts) && !/^qz\d{3}$/.test(id)),
   missingMap: nonemptyTexts.map(([id]) => id).filter((id) => !(id in audios) && !intentionallySilent.has(id)),
@@ -77,6 +111,7 @@ const report = {
       const value = String(texts[id] || '').trim();
       return /^(?:\(?[a-z0-9]+\)?[.)]?|image|picture|photo|illustration|sign)$/i.test(value);
     }),
+  catNarrationMismatch,
 };
 
 console.log(JSON.stringify({
