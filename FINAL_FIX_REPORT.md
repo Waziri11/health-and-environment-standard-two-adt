@@ -23,4 +23,3 @@ Source reviewed: `FINAL HEALTH & ENVIRONMENT STD TWO.docx`
 - Offline preloader and IMS manifest regenerated.
 - Cache version advanced to version 9.
 - Corrected pages rendered without browser console errors during final visual review.
-
