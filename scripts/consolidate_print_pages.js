@@ -58,10 +58,10 @@ for (const [pageNumber, entries] of [...numbered.entries()].sort((a, b) => a[0] 
   html = html.slice(0, contentStart) + replacement + html.slice(interfaceStart);
   html = html.replace(/<body[^>]*>/, '<body class="source-faithful">');
   if (!html.includes('source-fidelity.css')) {
-    html = html.replace('<link href="./assets/fonts.css" rel="stylesheet">', '<link href="./assets/fonts.css" rel="stylesheet">\n    <link href="./content/source-fidelity.css?v=8" rel="stylesheet">');
+    html = html.replace('<link href="./assets/fonts.css" rel="stylesheet">', '<link href="./assets/fonts.css" rel="stylesheet">\n    <link href="./content/source-fidelity.css?v=9" rel="stylesheet">');
   }
   if (!html.includes('source-fidelity.js')) {
-    html = html.replace('<script src="./assets/scorm.js"></script>', '<script src="./assets/scorm.js"></script>\n    <script src="./assets/source-fidelity.js?v=8"></script>');
+    html = html.replace('<script src="./assets/scorm.js"></script>', '<script src="./assets/scorm.js"></script>\n    <script src="./assets/source-fidelity.js?v=9"></script>');
   }
   fs.writeFileSync(primary.href, html);
   consolidated.push(primary);
@@ -75,8 +75,8 @@ for (const [href, label] of [['pg004_sec001.html', 'iv'], ['pg005_sec001.html', 
   const replacement = `<div id="content" class="adt-print-page opacity-0">\n  <div class="adt-page-flow">\n${sections}\n  </div>\n  <div class="adt-page-number" aria-hidden="true">${label}</div>\n</div>\n    </main>\n\n    `;
   html = html.slice(0, contentStart) + replacement + html.slice(interfaceStart);
   html = html.replace(/<body[^>]*>/, '<body class="source-faithful">');
-  if (!html.includes('source-fidelity.css')) html = html.replace('<link href="./assets/fonts.css" rel="stylesheet">', '<link href="./assets/fonts.css" rel="stylesheet">\n    <link href="./content/source-fidelity.css?v=8" rel="stylesheet">');
-  if (!html.includes('source-fidelity.js')) html = html.replace('<script src="./assets/scorm.js"></script>', '<script src="./assets/scorm.js"></script>\n    <script src="./assets/source-fidelity.js?v=8"></script>');
+  if (!html.includes('source-fidelity.css')) html = html.replace('<link href="./assets/fonts.css" rel="stylesheet">', '<link href="./assets/fonts.css" rel="stylesheet">\n    <link href="./content/source-fidelity.css?v=9" rel="stylesheet">');
+  if (!html.includes('source-fidelity.js')) html = html.replace('<script src="./assets/scorm.js"></script>', '<script src="./assets/scorm.js"></script>\n    <script src="./assets/source-fidelity.js?v=9"></script>');
   fs.writeFileSync(href, html);
 }
 
