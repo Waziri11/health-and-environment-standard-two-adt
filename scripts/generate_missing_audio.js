@@ -32,6 +32,7 @@ const spokenOverrides = {
   pg028_n0014: 'Letter o', pg028_n0016: 'Letter p',
   pg034_n0005: 'Letter a', pg034_n0007: 'Letter b', pg034_n0009: 'Letter c', pg034_n0011: 'Letter d',
   pg037_n0010: 'Letter a', pg038_n0002: 'Letter b',
+  pg036_n0006: 'One', pg036_n0009: 'Two', pg036_n0012: 'Three',
 };
 const ids = requested.length
   ? requested

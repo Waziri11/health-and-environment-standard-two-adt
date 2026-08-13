@@ -26,7 +26,6 @@ const catOccurrences = [
   ['pg022_sec001.html', 'images/pg022_im002.jpg', 'pg022_im002'],
   ['pg026_sec001.html', 'images/pg026_im002.jpg', 'pg026_im002'],
   ['pg033_sec001.html', 'images/pg033_im002.jpg', 'pg033_im002'],
-  ['pg033_sec002.html', 'images/pg033_im002.jpg', 'pg033_im002'],
   ['pg037_sec001.html', 'images/pg037_im002.jpg', 'pg037_im002'],
 ];
 

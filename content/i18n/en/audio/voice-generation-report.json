@@ -1,0 +1,24 @@
+{
+  "total_mapped": 1165,
+  "generated": 1165,
+  "primary_voice": "en-TZ-ImaniNeural",
+  "primary_files": 1155,
+  "secondary_voice": "en-KE-ChilembaNeural",
+  "secondary_files": 10,
+  "secondary_voice_ids": [
+    "pg035_n0006",
+    "pg035_n0007",
+    "pg035_n0008",
+    "pg035_n0009",
+    "pg035_n0010",
+    "pg035_n0006_easy_read",
+    "pg035_n0007_easy_read",
+    "pg035_n0008_easy_read",
+    "pg035_n0009_easy_read",
+    "pg035_n0010_easy_read"
+  ],
+  "rate": "-5%",
+  "missing_files": 0,
+  "invalid_files": 0,
+  "failures": []
+}
