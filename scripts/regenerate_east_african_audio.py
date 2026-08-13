@@ -26,26 +26,34 @@ DIALOGUE_IDS = {
 
 # Short printed labels need a spoken form that is useful to a listener.
 SPOKEN_OVERRIDES = {
-    **{f"pg010_n{number:04d}": f"Letter {letter}" for number, letter in zip(
+    **{f"pg010_n{number:04d}": f"Picture {letter}" for number, letter in zip(
         (13, 16, 20, 23, 27, 30), "abcdef")},
-    **{f"pg011_n{number:04d}": f"Letter {letter}" for number, letter in zip(
+    **{f"pg011_n{number:04d}": f"Picture {letter}" for number, letter in zip(
         (3, 5, 7, 9, 11, 13, 15), "ghijklm")},
-    **{f"pg014_n{number:04d}": f"Letter {letter}" for number, letter in zip(
+    **{f"pg014_n{number:04d}": f"Picture {letter}" for number, letter in zip(
         (15, 18, 22, 25), "abcd")},
-    **{f"pg015_n{number:04d}": f"Letter {letter}" for number, letter in zip(
+    **{f"pg015_n{number:04d}": f"Picture {letter}" for number, letter in zip(
         (5, 8, 12, 15, 19, 22, 26, 29), "efghijkl")},
-    **{f"pg021_n{number:04d}": f"Letter {letter}" for number, letter in zip(
+    "pg018_n0004": "Picture number 1 a", "pg018_n0006": "Picture b",
+    "pg018_n0008": "Picture number 2 a", "pg018_n0010": "Picture b",
+    "pg018_n0012": "Picture number 3", "pg018_n0014": "Picture number 4",
+    "pg018_n0016": "Picture number 5",
+    **{f"pg021_n{number:04d}": f"Picture {letter}" for number, letter in zip(
         (18, 20, 22), "abc")},
-    **{f"pg025_n{number:04d}": f"Letter {letter}" for number, letter in zip(
+    "pg022_n0011": "Picture number 1", "pg022_n0013": "Picture number 2",
+    "pg023_n0002": "Picture number 3 a", "pg023_n0003": "Picture b",
+    "pg023_n0004": "Picture number 4 a", "pg023_n0005": "Picture b",
+    "pg023_n0006": "Picture number 5", "pg023_n0007": "Picture number 6",
+    **{f"pg025_n{number:04d}": f"Picture {letter}" for number, letter in zip(
         (2, 4, 6, 8, 10, 12, 14, 16, 18), "abcdefghi")},
-    **{f"pg027_n{number:04d}": f"Letter {letter}" for number, letter in zip(
+    **{f"pg027_n{number:04d}": f"Picture {letter}" for number, letter in zip(
         (2, 4, 6, 8, 10, 12, 14, 16), "abcdefgh")},
-    **{f"pg028_n{number:04d}": f"Letter {letter}" for number, letter in zip(
+    **{f"pg028_n{number:04d}": f"Picture {letter}" for number, letter in zip(
         (2, 4, 6, 8, 10, 12, 14, 16), "ijklmnop")},
-    **{f"pg034_n{number:04d}": f"Letter {letter}" for number, letter in zip(
+    **{f"pg034_n{number:04d}": f"Picture {letter}" for number, letter in zip(
         (5, 7, 9, 11), "abcd")},
-    "pg037_n0010": "Letter a",
-    "pg038_n0002": "Letter b",
+    "pg037_n0010": "Picture a",
+    "pg038_n0002": "Picture b",
     "pg036_n0006": "One",
     "pg036_n0009": "Two",
     "pg036_n0012": "Three",
@@ -54,13 +62,14 @@ SPOKEN_OVERRIDES = {
 
 async def synthesize(item, texts, semaphore, retries):
     text_id, filename = item
-    text = SPOKEN_OVERRIDES.get(text_id, texts.get(text_id))
+    base_id = text_id.removesuffix("_easy_read")
+    text = SPOKEN_OVERRIDES.get(text_id, SPOKEN_OVERRIDES.get(base_id, texts.get(text_id)))
     if not isinstance(text, str) or not text.strip():
         return text_id, False, "missing or empty text"
     # Prevent TTS from reading the endpoints as words or abbreviations.
     text = re.sub(
         r"\bpictures a up to m\b",
-        "pictures letter A up to letter M",
+        "pictures labelled A through M",
         text,
         flags=re.IGNORECASE,
     )

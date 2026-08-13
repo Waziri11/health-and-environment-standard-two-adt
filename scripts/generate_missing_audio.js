@@ -12,26 +12,33 @@ const ffmpeg = process.env.FFMPEG_PATH ||
   '/tmp/adt-ffmpeg/node_modules/@ffmpeg-installer/darwin-arm64/ffmpeg';
 const requested = process.argv.slice(2);
 const spokenOverrides = {
-  pg010_n0013: 'Letter a', pg010_n0016: 'Letter b', pg010_n0020: 'Letter c',
-  pg010_n0023: 'Letter d', pg010_n0027: 'Letter e', pg010_n0030: 'Letter f',
-  pg011_n0003: 'Letter g', pg011_n0005: 'Letter h', pg011_n0007: 'Letter i',
-  pg011_n0009: 'Letter j', pg011_n0011: 'Letter k', pg011_n0013: 'Letter l', pg011_n0015: 'Letter m',
-  pg014_n0015: 'Letter a', pg014_n0018: 'Letter b', pg014_n0022: 'Letter c', pg014_n0025: 'Letter d',
-  pg015_n0005: 'Letter e', pg015_n0008: 'Letter f', pg015_n0012: 'Letter g',
-  pg015_n0015: 'Letter h', pg015_n0019: 'Letter i', pg015_n0022: 'Letter j',
-  pg015_n0026: 'Letter k', pg015_n0029: 'Letter l',
-  pg021_n0018: 'Letter a', pg021_n0020: 'Letter b', pg021_n0022: 'Letter c',
-  pg025_n0002: 'Letter a', pg025_n0004: 'Letter b', pg025_n0006: 'Letter c',
-  pg025_n0008: 'Letter d', pg025_n0010: 'Letter e', pg025_n0012: 'Letter f',
-  pg025_n0014: 'Letter g', pg025_n0016: 'Letter h', pg025_n0018: 'Letter i',
-  pg027_n0002: 'Letter a', pg027_n0004: 'Letter b', pg027_n0006: 'Letter c',
-  pg027_n0008: 'Letter d', pg027_n0010: 'Letter e', pg027_n0012: 'Letter f',
-  pg027_n0014: 'Letter g', pg027_n0016: 'Letter h',
-  pg028_n0002: 'Letter i', pg028_n0004: 'Letter j', pg028_n0006: 'Letter k',
-  pg028_n0008: 'Letter l', pg028_n0010: 'Letter m', pg028_n0012: 'Letter n',
-  pg028_n0014: 'Letter o', pg028_n0016: 'Letter p',
-  pg034_n0005: 'Letter a', pg034_n0007: 'Letter b', pg034_n0009: 'Letter c', pg034_n0011: 'Letter d',
-  pg037_n0010: 'Letter a', pg038_n0002: 'Letter b',
+  pg010_n0013: 'Picture a', pg010_n0016: 'Picture b', pg010_n0020: 'Picture c',
+  pg010_n0023: 'Picture d', pg010_n0027: 'Picture e', pg010_n0030: 'Picture f',
+  pg011_n0003: 'Picture g', pg011_n0005: 'Picture h', pg011_n0007: 'Picture i',
+  pg011_n0009: 'Picture j', pg011_n0011: 'Picture k', pg011_n0013: 'Picture l', pg011_n0015: 'Picture m',
+  pg014_n0015: 'Picture a', pg014_n0018: 'Picture b', pg014_n0022: 'Picture c', pg014_n0025: 'Picture d',
+  pg015_n0005: 'Picture e', pg015_n0008: 'Picture f', pg015_n0012: 'Picture g',
+  pg015_n0015: 'Picture h', pg015_n0019: 'Picture i', pg015_n0022: 'Picture j',
+  pg015_n0026: 'Picture k', pg015_n0029: 'Picture l',
+  pg018_n0004: 'Picture number 1 a', pg018_n0006: 'Picture b',
+  pg018_n0008: 'Picture number 2 a', pg018_n0010: 'Picture b',
+  pg018_n0012: 'Picture number 3', pg018_n0014: 'Picture number 4', pg018_n0016: 'Picture number 5',
+  pg021_n0018: 'Picture a', pg021_n0020: 'Picture b', pg021_n0022: 'Picture c',
+  pg022_n0011: 'Picture number 1', pg022_n0013: 'Picture number 2',
+  pg023_n0002: 'Picture number 3 a', pg023_n0003: 'Picture b',
+  pg023_n0004: 'Picture number 4 a', pg023_n0005: 'Picture b',
+  pg023_n0006: 'Picture number 5', pg023_n0007: 'Picture number 6',
+  pg025_n0002: 'Picture a', pg025_n0004: 'Picture b', pg025_n0006: 'Picture c',
+  pg025_n0008: 'Picture d', pg025_n0010: 'Picture e', pg025_n0012: 'Picture f',
+  pg025_n0014: 'Picture g', pg025_n0016: 'Picture h', pg025_n0018: 'Picture i',
+  pg027_n0002: 'Picture a', pg027_n0004: 'Picture b', pg027_n0006: 'Picture c',
+  pg027_n0008: 'Picture d', pg027_n0010: 'Picture e', pg027_n0012: 'Picture f',
+  pg027_n0014: 'Picture g', pg027_n0016: 'Picture h',
+  pg028_n0002: 'Picture i', pg028_n0004: 'Picture j', pg028_n0006: 'Picture k',
+  pg028_n0008: 'Picture l', pg028_n0010: 'Picture m', pg028_n0012: 'Picture n',
+  pg028_n0014: 'Picture o', pg028_n0016: 'Picture p',
+  pg034_n0005: 'Picture a', pg034_n0007: 'Picture b', pg034_n0009: 'Picture c', pg034_n0011: 'Picture d',
+  pg037_n0010: 'Picture a', pg038_n0002: 'Picture b',
   pg036_n0006: 'One', pg036_n0009: 'Two', pg036_n0012: 'Three',
 };
 const ids = requested.length
@@ -52,7 +59,8 @@ let generated = 0;
 
 try {
   for (const id of ids) {
-    const text = spokenOverrides[id] || texts[id];
+    const baseId = id.replace(/_easy_read$/, '');
+    const text = spokenOverrides[id] || spokenOverrides[baseId] || texts[id];
     const filename = audios[id];
     if (typeof text !== 'string' || !text.trim()) throw new Error(`Missing text for ${id}`);
     if (!filename) throw new Error(`Missing audio mapping for ${id}`);
