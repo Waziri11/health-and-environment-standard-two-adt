@@ -38,13 +38,13 @@ SPOKEN_OVERRIDES = {
     "pg018_n0008": "Picture number 2 a", "pg018_n0010": "Picture b",
     "pg018_n0012": "Picture number 3", "pg018_n0014": "Picture number 4",
     "pg018_n0016": "Picture number 5",
-    **{f"pg021_n{number:04d}": f"Picture {letter}" for number, letter in zip(
+    **{f"pg021_n{number:04d}": f"Safety sign {letter}" for number, letter in zip(
         (18, 20, 22), "abc")},
     "pg022_n0011": "Picture number 1", "pg022_n0013": "Picture number 2",
     "pg023_n0002": "Picture number 3 a", "pg023_n0003": "Picture b",
     "pg023_n0004": "Picture number 4 a", "pg023_n0005": "Picture b",
     "pg023_n0006": "Picture number 5", "pg023_n0007": "Picture number 6",
-    **{f"pg025_n{number:04d}": f"Picture {letter}" for number, letter in zip(
+    **{f"pg025_n{number:04d}": f"Safety sign {letter}" for number, letter in zip(
         (2, 4, 6, 8, 10, 12, 14, 16, 18), "abcdefghi")},
     **{f"pg027_n{number:04d}": f"Picture {letter}" for number, letter in zip(
         (2, 4, 6, 8, 10, 12, 14, 16), "abcdefgh")},
