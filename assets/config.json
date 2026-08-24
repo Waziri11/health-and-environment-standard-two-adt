@@ -1,6 +1,6 @@
 {
   "title": "Health and Environment Pupil’s Book Standard Two",
-  "bundleVersion": "10",
+  "bundleVersion": "11",
   "languages": {
     "available": [
       "en"
@@ -8,7 +8,7 @@
     "default": "en"
   },
   "features": {
-    "signLanguage": false,
+    "signLanguage": true,
     "easyRead": true,
     "glossary": true,
     "eli5": false,
