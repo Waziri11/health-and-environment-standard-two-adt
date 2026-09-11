@@ -68,11 +68,13 @@ async def synthesize(item, texts, semaphore, retries):
         return text_id, False, "missing or empty text"
     # Prevent TTS from reading the endpoints as words or abbreviations.
     text = re.sub(
-        r"\bpictures a up to m\b",
-        "pictures labelled A through M",
+        r"\bpictures a(?: up to |\s*-\s*)([a-z])\b",
+        lambda m: "pictures labelled A through " + m.group(1).upper(),
         text,
         flags=re.IGNORECASE,
     )
+    text = re.sub(r"^\(i\)\s*", "One. ", text)
+    text = re.sub(r"^\(ii\)\s*", "Two. ", text)
     voice = SECONDARY_VOICE if text_id in DIALOGUE_IDS else PRIMARY_VOICE
     target = AUDIO_DIR / filename
     temporary = target.with_name(target.name + ".regenerating")
