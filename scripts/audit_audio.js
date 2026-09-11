@@ -13,7 +13,10 @@ const imageRecords = [];
 const unclassifiedImages = [];
 const legacyImageDataIds = [];
 const narrationCounts = new Map();
+// Matching cell text is narrated once, in column order, by the table captions.
+const columnNarrationIds = JSON.parse(fs.readFileSync(path.join(root, 'content/column-narration-ids.json'), 'utf8'));
 const intentionallySilent = new Set([
+  ...columnNarrationIds,
   'pg012_n0005', 'pg012_n0007', 'pg012_n0024', 'pg012_n0025', 'pg012_n0039', 'pg012_n0041',
 ]);
 const catNarration = 'There is an orange coloured cat sitting and looking forward directing attention as it introduces the next learning activity';
