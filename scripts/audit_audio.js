@@ -23,7 +23,6 @@ const catNarration = 'There is an orange coloured cat sitting and looking forwar
 const catOccurrences = [
   ['pg007_sec001.html', 'images/pg009_im002.jpg', 'pg007_im002'],
   ['pg009_sec001.html', 'images/pg009_im002.jpg', 'pg009_im002'],
-  ['pg009_sec002.html', 'images/pg009_im002.jpg', 'pg009_im002'],
   ['pg013_sec001.html', 'images/pg013_im002.jpg', 'pg013_im002'],
   ['pg016_sec001.html', 'images/pg016_im002.jpg', 'pg016_im002'],
   ['pg022_sec001.html', 'images/pg022_im002.jpg', 'pg022_im002'],

@@ -34,10 +34,12 @@ for index, entry in enumerate(pages, 1):
     for tag, attrs in page.tags:
         if tag == 'img':
             assert (ROOT / attrs['src']).is_file(), attrs
-    if entry['section_id'].startswith('pg'):
-        original_page = int(entry['section_id'][2:5])
-        assert videos[f'video-{index}'] == f'page_{original_page}.mp4'
-assert 'video-1' not in videos and 'video-42' not in videos
+    # Every reader page, including both covers, has its own sign-language video.
+    filename = videos[f'video-{index}']
+    assert filename == f'page_{index}.mp4'
+    assert (ROOT / 'content/i18n/en/video' / filename).is_file(), filename
+assert set(videos) == {f'video-{index}' for index in range(1, len(pages) + 1)}
+assert {p.name for p in (ROOT / 'content/i18n/en/video').glob('*.mp4')} == set(videos.values())
 for name in ['pg007_n0014', 'pg009_n0011']:
     assert texts[name].startswith('(i) ')
     assert texts[name + '_easy_read'].startswith('(i) ')
